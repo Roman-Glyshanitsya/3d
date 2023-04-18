@@ -1,9 +1,8 @@
 import "./style.css";
 import * as THREE from "three";
-// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-// import { ArcballControls } from "three/addons/controls/ArcballControls.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as dat from "dat.gui";
 
@@ -106,6 +105,9 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+// Sets the color of the background
+renderer.setClearColor(0x87130b);
 
 /**
  * Animate
