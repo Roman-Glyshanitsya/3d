@@ -3,10 +3,11 @@ import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import gsap from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { ScrollTriger } from "gsap/ScrollTrigger";
+// import { ArcballControls } from "three/addons/controls/ArcballControls.js";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as dat from "dat.gui";
 
-gsap.registerPlugin(ScrollTriger);
+gsap.registerPlugin(ScrollTrigger);
 
 const gltfLoader = new GLTFLoader();
 
@@ -29,7 +30,7 @@ const scene = new THREE.Scene();
 const material = new THREE.MeshBasicMaterial();
 material.color = new THREE.Color(0xff0000);
 
-gltfLoader.load("police_ford_raptor.glb", (gsap) => {
+gltfLoader.load("police_ford_raptor.glb", (gltf) => {
   gltf.scene.scale.set(0.3, 0.3, 0.3);
   gltf.scene.rotation.set(0, -0.5, 0);
   scene.add(gltf.scene);
